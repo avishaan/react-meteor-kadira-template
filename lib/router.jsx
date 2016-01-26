@@ -7,6 +7,15 @@ FlowRouter.route('/', {
     });
   }
 });
+FlowRouter.route('/ninjas', {
+  name: 'NinjasList',
+  action() {
+    ReactLayout.render(App, {
+      content: <NinjasList />,
+      nav: <Nav />
+    });
+  }
+});
 FlowRouter.route('/request', {
   name: 'RequestForm',
   action() {
