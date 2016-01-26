@@ -7,6 +7,15 @@ FlowRouter.route('/', {
     });
   }
 });
+FlowRouter.route('/login', {
+  name: 'Login',
+  action() {
+    ReactLayout.render(App, {
+      content: <Login />,
+      nav: <Nav />
+    });
+  }
+});
 FlowRouter.route('/ninjas', {
   name: 'NinjasList',
   action() {
@@ -20,8 +29,7 @@ FlowRouter.route('/request', {
   name: 'RequestForm',
   action() {
     ReactLayout.render(App, {
-      content: <RequestForm />,
-      nav: ''
+      content: <RequestForm name="Request" />
     });
   }
 });
