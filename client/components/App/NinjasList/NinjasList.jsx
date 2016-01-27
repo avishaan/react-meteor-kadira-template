@@ -1,6 +1,7 @@
 NinjasList = React.createClass({
   mixins: [ReactMeteorData],
   getMeteorData() {
+    Meteor.subscribe('ninjas');
     return {
       ninjas: Ninjas.find().fetch()
     }
