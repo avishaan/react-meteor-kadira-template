@@ -7,11 +7,17 @@ App = React.createClass({
   },
   showLogin() {
     return (
-      <div className="row">
-        <div className="col-xs-12 text-center">
-          <p>You must be logged in to do that.</p>
+      <div>
+        <div className="row">
+          <div className="col-xs-12 text-center">
+            <p>You must be logged in to do that.</p>
+          </div>
         </div>
-        <Login />
+        <div className="row">
+          <div className="col-xs-12 col-xs-offset-3">
+            <Login />
+          </div>
+        </div>
       </div>
     );
   },
