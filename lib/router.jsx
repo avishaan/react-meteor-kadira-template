@@ -7,6 +7,14 @@ FlowRouter.route('/', {
     });
   }
 });
+FlowRouter.route('/register', {
+  name: 'Register',
+  action() {
+    ReactLayout.render(App, {
+      content: <Register name="Register"/>
+    });
+  }
+});
 FlowRouter.route('/login', {
   name: 'Login',
   action() {
