@@ -37,3 +37,6 @@ Ninjas.helpers({
     return this.firstName + ' ' + this.lastName;
   }
 });
+
+// ensure we can only add update remove ninjas if we are logged in
+Ninjas.permit(['insert', 'update', 'remove']).ifLoggedIn().apply();
