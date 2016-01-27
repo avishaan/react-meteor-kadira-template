@@ -57,5 +57,18 @@ Meteor.methods({
         alert('User added successfully');
       });
     }
+  },
+  editNinja(ninja) {
+    if (!Meteor.userId()) {
+      return
+    }
+    Ninjas.update(ninja._id, {
+      $set: {
+        firstName: ninja.firstName,
+        lastName: ninja.lastName
+      }, function(){
+        alert('User edited');
+      }
+    });
   }
 });

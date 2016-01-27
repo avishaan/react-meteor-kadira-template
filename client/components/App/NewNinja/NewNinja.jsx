@@ -16,7 +16,7 @@ NewNinja = React.createClass({
     return (
       <div className="container">
         <div className="row">
-          <div className="col-xs-12">
+          <div className="col-xs-12 col-sm-6">
             <h1>Add User</h1>
             <form id="new-ninja-form" action="#" onSubmit={this.addNinja}>
               <div className="form-group">

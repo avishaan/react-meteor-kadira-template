@@ -4,7 +4,7 @@ NinjasList = React.createClass({
     Meteor.subscribe('ninjas');
     return {
       ninjas: Ninjas.find().fetch()
-    }
+    };
   },
   renderNinjas() {
     return this.data.ninjas.map((ninja) => {
