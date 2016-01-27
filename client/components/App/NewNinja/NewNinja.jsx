@@ -7,6 +7,10 @@ NewNinja = React.createClass({
     var ninja = {firstName: firstName, lastName: lastName};
 
     Meteor.call('addNinja', ninja);
+
+    // clear the values from the form
+    $('#firstName').val('');
+    $('#lastName').val('');
   },
   render() {
     return (

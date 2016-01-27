@@ -53,6 +53,8 @@ Meteor.methods({
         score: 0,
         status: true,
         jobsCompleted: 0
+      }, function() {
+        alert('User added successfully');
       });
     }
   }
