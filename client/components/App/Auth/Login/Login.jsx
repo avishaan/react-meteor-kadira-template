@@ -8,7 +8,7 @@ Login = React.createClass({
   render() {
     return (
       <div className="col-xs-6">
-        <h1>Login to NinjaTracker</h1>
+        <h1>Login to Tracker</h1>
         <form onSubmit={this.login} id="login-form" action="#">
           <div className="form-group">
             <label htmlFor="email">Email:</label>

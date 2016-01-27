@@ -40,3 +40,20 @@ Ninjas.helpers({
 
 // ensure we can only add update remove ninjas if we are logged in
 Ninjas.permit(['insert', 'update', 'remove']).ifLoggedIn().apply();
+
+// backend method for adding a ninja
+Meteor.methods({
+  addNinja(ninja) {
+    if (!Meteor.userId()){
+      return;
+    } else {
+      Ninjas.insert({
+        firstName: ninja.firstName,
+        lastName: ninja.lastName,
+        score: 0,
+        status: true,
+        jobsCompleted: 0
+      });
+    }
+  }
+})
