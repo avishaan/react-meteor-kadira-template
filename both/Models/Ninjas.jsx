@@ -54,20 +54,23 @@ Meteor.methods({
         status: true,
         jobsCompleted: 0
       }, function() {
-        alert('User added successfully');
+
       });
     }
   },
   editNinja(ninja) {
     if (!Meteor.userId()) {
-      return
+      return;
     }
     Ninjas.update(ninja._id, {
       $set: {
         firstName: ninja.firstName,
-        lastName: ninja.lastName
+        lastName: ninja.lastName,
+        score: 0,
+        status: true,
+        jobsCompleted: 0
       }, function(){
-        alert('User edited');
+
       }
     });
   }

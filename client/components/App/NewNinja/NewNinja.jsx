@@ -6,7 +6,15 @@ NewNinja = React.createClass({
 
     var ninja = {firstName: firstName, lastName: lastName};
 
-    Meteor.call('addNinja', ninja);
+    Meteor.call('addNinja', ninja, function(err, result){
+      if (err){
+        return sAlert.error(err.reason, {effect: 'genie'});
+      } else {
+        $('#firstName').val('');
+        $('#lastName').val('');
+        return sAlert.success('User created successfully!', {effect: 'genie'});
+      }
+    });
 
     // clear the values from the form
     $('#firstName').val('');

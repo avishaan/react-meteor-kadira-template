@@ -16,7 +16,15 @@ EditNinja = React.createClass({
       firstName: firstName,
       lastName: lastName
     };
-    Meteor.call('editNinja', ninja);
+    Meteor.call('editNinja', ninja, function(err, result){
+      if (err) {
+        return sAlert.error(err.reason, {effec: 'genie'});
+      } else {
+        $('#firstName').val('');
+        $('#lastName').val('');
+        return sAlert.success('User created successfully!', {effect: 'genie'});
+      }
+    });
   },
   render() {
     return (

@@ -3,7 +3,13 @@ Login = React.createClass({
     e.preventDefault();
     var email = $('#email').val();
     var password = $('#password').val();
-    Meteor.loginWithPassword(email, password, FlowRouter.go('/'));
+    Meteor.loginWithPassword(email, password, function(err){
+      if (err) {
+        return sAlert.error(err.reason, {effec: 'genie'});
+      } else {
+        FlowRouter.go('/');
+      }
+    });
   },
   render() {
     return (
