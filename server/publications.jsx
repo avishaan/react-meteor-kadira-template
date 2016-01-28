@@ -8,3 +8,6 @@ Meteor.publish('ninja', function(id){
   return Ninjas.find({_id: id});
 });
 
+Meteor.publish('requests', function() {
+  return Requests.find();
+});
